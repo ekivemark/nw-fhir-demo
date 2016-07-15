@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block pretitle %}{% endblock %}
+{% block extra_head %}
+{% endblock %}
+
+{% block breadcrumbs %}
+       <div class="container">
+        <ul class="breadcrumb">
+            <li class="active">Home</li>
+        </ul>
+    </div>
+{% endblock %}
+{% block pagename %}Welcome to the FHIR Demonstrator{% endblock %}
+{% block Content %}
+
+
+    <div class="hero-unit">
+
+        <div class="container-fluid">
+            <div class="row">
+
+            <div class="col-md-8">
+
+                <h2>How can you use FHIR?</h2>
+                <h4>MiHIN Test Server in Michigan</h4>
+                <p>Conformance Statement: <a href="http://52.72.172.54:8080/fhir/baseDstu2/metadata" target="_blank">
+                    http://52.72.172.54:8080/fhir/baseDstu2/metadata</a>
+                </p>
+
+                    <div class="col-lg-4 well">The Conformance Statement describes the
+                        FHIR Features that the server supports.
+                    </div>
+
+                <h4>
+                   Population Analysis?
+                </h4>
+                <div class="col-lg-12 well">
+
+                <div class="col-lg-6">Males: <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?gender=male&_format=json&_pretty=true" target="_blank">
+                        /baseDstu2/Patient?gender=male</a></div>
+                <div class="col-lg-6">Females: <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?gender=female&_format=json&_pretty=true" target="_blank">
+                        /baseDstu2/Patient?gender=female</a></div>
+
+                </div>
+
+                <h4>Location Analysis</h4>
+
+                <div class="col-lg-12 well">
+                    <div class="col-lg-4">
+                Detroit ( <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?address-city=detroit&_format=json&_pretty=true" target="_blank">
+                /baseDstu2/Patient?address-city=detroit</a> )
+            </div>
+                    <div class="col-lg-4">
+                Zip code 48126 ( <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?address-postalcode=48126&_format=json&_pretty=true" target="_blank">
+                /baseDstu2/Patient?address-postalcode=48126</a> )
+            </div>
+                    <div class="col-lg-4">
+                Zip code 48310 ( <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?address-postalcode=48310&_format=json&_pretty=true" target="_blank">
+                /baseDstu2/Patient?address-postalcode=48310</a> )
+                    </div>
+                 </div>
+
+
+                <h4>Age Analysis</h4>
+                <div class="col-lg-12 well">
+                    <div class="col-lg-4">
+                Born This century ( <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?birthdate=>1999-12-31&_format=json&_pretty=true" target="_blank">
+                /baseDstu2/Patient?birthdate=>1999-12-31</a> )
+                    </div>
+                    <div class="col-lg-4">
+                Born Last Century ( <a href="http://52.72.172.54:8080/fhir/baseDstu2/Patient?birthdate=<2000-01-01&_format=json&_pretty=true" target="_blank">
+                /baseDstu2/Patient?birthdate=<2000-01-01</a> )
+                    </div>
+
+                </div>
+                <div class="col-lg-12 well">
+                    <div class="col-lg-4">
+                        <h2><a href="http://www.json-xls.com/json2xls" target="_converter">Convert to Excel?</a>
+                        </h2></div>
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-4"><img
+                    src="{% static 'img/layout/bluebuttonapiv1.png' %}"
+                    style="height:200px">
+                    <img
+                    src="{% static 'img/layout/newwave.png' %}"
+                    style="height:200px">
+                </div>
+            <div class="col-md-4">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
