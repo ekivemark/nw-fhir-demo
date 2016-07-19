@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block Content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{name}} <small>{{subname}}</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {% include "include/messages.html" %}
+            </div>
+        </div>
+
+	    <div class="row">
+            <div class="col-lg-12 well">
+                {{ url_parm }}
+            </div>
+            <div class="col-lg-12 well">
+                <h4>{{ highlight_field }} = {{ highlight }}</h4>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="{% url 'home' %}" >
+            <button type="button" class="btn btn-primary"> <i class="fa fa-home"></i>  Home  </button></a>
+            <br/>
+            <a href="javascript:history.go(-1)">{% trans "Go Back" %}</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {% if additional_info %}
+
+                    <h3>Result</h3>
+                    <pre>
+{{ additional_info }}
+                    </pre>
+
+                {% endif %}
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+
+{% endblock %}
+
+
